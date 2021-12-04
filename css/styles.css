@@ -198,7 +198,9 @@ img {
   text-transform: uppercase;
   color: var(--white-text-color);
 }
-.hero-button {
+.hero-button,
+.submit-button,
+.subscribe-button {
   min-width: 200px;
   min-height: 50px;
   font-family: inherit;
@@ -470,7 +472,11 @@ img {
 .footer-link:focus {
   color: #2196f3;
 }
-.footer-social-title {
+.footer-social {
+  margin-right: 93px;
+}
+.footer-social-title,
+.footer-form-title {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -507,6 +513,35 @@ img {
 }
 .footer-social-icon {
   fill: currentColor;
+}
+.footer-form-wrap {
+  display: flex;
+  margin-top: 20px;
+}
+
+.footer-form-input {
+  width: 358px;
+  height: 50px;
+  margin-right: 12px;
+  padding-left: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-btn-icon {
+  margin-left: 10px;
 }
 /*---------- portfolio styles-----------------*/
 .filters {
@@ -631,6 +666,7 @@ img {
   position: absolute;
   width: 528px;
   height: 581px;
+  padding: 40px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -663,7 +699,7 @@ img {
 }
 .backdrop.is-hidden .modal {
   transform: scale(1.75) translate(100px, 100px);
-  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-title {
   font-weight: 700;
@@ -671,9 +707,122 @@ img {
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
-
   color: var(--title-text-color);
+  margin-bottom: 15px;
 }
-.modal-form {
-  padding: 40px;
+.modal-form-field {
+  margin-bottom: 10px;
+}
+.modal-input-wrap {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus + .input-icon {
+  fill: var(--accent-color);
+}
+.modal-input:focus,
+.modal-text:focus,
+.footer-form-input:focus {
+  border-color: var(--accent-color);
+}
+.modal-form-wrap {
+  margin-bottom: 10px;
+}
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: transparent;
+  color: var(--title-text-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input-text {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+.modal-text {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  padding: 12px 16px;
+  resize: none;
+  background-color: transparent;
+  color: var(--title-text-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-text::placeholder {
+  font-weight: n400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.modal-check-field {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.modal-check-text span {
+  display: flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+}
+.icon-check {
+  display: block;
+  fill: transparent;
+}
+.modal-check:checked + .modal-check-text span {
+  background-color: var(--accent-color);
+  border: none;
+}
+.modal-check:checked + .modal-check-text .icon-check {
+  fill: transparent;
+}
+.modal-check-text {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+.policy-link {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: var(--accent-text-color);
+}
+.submit-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-button,
+.subscribe-button {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.submit-button:focus,
+.subscribe-button:focus {
+  background-color: #188ce8;
 }
